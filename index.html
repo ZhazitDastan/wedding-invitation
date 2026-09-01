@@ -6,16 +6,8 @@
   <title>Гульфайруз — Қыз ұзату тойы</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Marcellus&family=Caveat:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Marck+Script&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    @font-face {
-      font-family: 'Wankstaberg Battles';
-      src: local('Wankstaberg Battles'),
-           url('./fonts/WankstabergBattles.woff2') format('woff2'),
-           url('./fonts/WankstabergBattles.ttf') format('truetype');
-      font-weight: normal; font-style: normal; font-display: swap;
-    }
-
     *, *::before, *::after { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     a { color: #5B2B26; text-decoration: none; }
@@ -26,7 +18,7 @@
       width: 100%; padding: 14px 16px;
       border: 1px solid rgba(59,42,34,.18); border-radius: 12px;
       background: #F5EDE0; color: #3B2A22; cursor: pointer;
-      font-family: 'Cormorant Garamond', serif; font-size: 17px;
+      font-family: 'PT Serif', 'Times New Roman', serif; font-size: 17px;
       transition: border-color .2s, background .2s, transform .1s;
     }
     .rsvp-opt:hover  { border-color: #B8863B; background: #F5E8CC; }
@@ -36,7 +28,7 @@
     @keyframes gPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.045)} }
     @keyframes gHalo  { 0%,100%{transform:scale(1);opacity:.4} 50%{transform:scale(1.18);opacity:0} }
 
-    #app { position:relative; min-height:100vh; background:#EFE8DC; color:#3B2A22; font-family:'Cormorant Garamond',serif; }
+    #app { position:relative; min-height:100vh; background:#EFE8DC; color:#3B2A22; font-family:'PT Serif','Times New Roman',serif; }
 
     @media (min-width:768px) {
       html,body {
@@ -315,15 +307,15 @@
     <div style="font-family:'Jost',sans-serif;font-size:clamp(9px,2.6vw,12px);letter-spacing:.46em;text-transform:uppercase;color:#9A7C63;font-weight:400;margin-bottom:clamp(8px,2vh,14px);">
       Той шақыруы
     </div>
-    <div class="rv-words cover-words" style="font-family:'Wankstaberg Battles','Caveat',cursive;font-size:clamp(24px,min(8.5vw,7vh),48px);line-height:1.2;color:#6E2F2A;text-shadow:0 1px 10px rgba(110,47,42,.15);">
+    <div class="rv-words cover-words" style="font-family:'Marck Script','Caveat',cursive;font-size:clamp(24px,min(8.5vw,7vh),48px);line-height:1.2;color:#6E2F2A;text-shadow:0 1px 10px rgba(110,47,42,.15);">
       Сіз шақыру алдыңыз.
     </div>
-    <div style="margin-top:clamp(10px,2.4vh,18px);display:inline-flex;align-items:center;gap:12px;font-family:'Marcellus',serif;font-size:clamp(10px,2.9vw,13px);letter-spacing:.34em;text-transform:uppercase;color:#7A5C48;">
+    <div style="margin-top:clamp(10px,2.4vh,18px);display:inline-flex;align-items:center;gap:12px;font-family:'PT Serif','Times New Roman',serif;font-size:clamp(10px,2.9vw,13px);letter-spacing:.34em;text-transform:uppercase;color:#7A5C48;">
       <span style="width:26px;height:1px;background:#B8863B;opacity:.7;"></span>
       Қыз ұзату
       <span style="width:26px;height:1px;background:#B8863B;opacity:.7;"></span>
     </div>
-    <div style="margin-top:clamp(6px,1.6vh,10px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,3.4vw,16px);letter-spacing:.28em;color:#8A6A54;">
+    <div style="margin-top:clamp(6px,1.6vh,10px);font-family:'PT Serif','Times New Roman',serif;font-size:clamp(12px,3.4vw,16px);letter-spacing:.28em;color:#8A6A54;">
       10 · 10 · 2026
     </div>
   </div>
@@ -450,13 +442,13 @@
             <circle r="2.4"/>
           </g>
         </svg>
-        <div style="font-family:'Marcellus',serif;letter-spacing:.3em;font-size:clamp(7px,1.8vw,9px);text-transform:uppercase;color:#F0D3AE;text-shadow:0 1px 0 rgba(50,15,15,.5);padding-left:.3em;">Ашу</div>
+        <div style="font-family:'PT Serif','Times New Roman',serif;letter-spacing:.3em;font-size:clamp(7px,1.8vw,9px);text-transform:uppercase;color:#F0D3AE;text-shadow:0 1px 0 rgba(50,15,15,.5);padding-left:.3em;">Ашу</div>
       </div>
     </div>
   </div>
 
   <!-- подсказка снизу -->
-  <div id="cover-hint" style="position:absolute;z-index:3;bottom:clamp(22px,6vh,52px);left:0;right:0;text-align:center;padding:0 24px;font-family:'Marcellus',serif;font-size:clamp(11px,3vw,14px);letter-spacing:.06em;color:#8A6A54;animation:gFloat 3.4s ease-in-out infinite;transition:opacity .8s ease;">
+  <div id="cover-hint" style="position:absolute;z-index:3;bottom:clamp(22px,6vh,52px);left:0;right:0;text-align:center;padding:0 24px;font-family:'PT Serif','Times New Roman',serif;font-size:clamp(11px,3vw,14px);letter-spacing:.06em;color:#8A6A54;animation:gFloat 3.4s ease-in-out infinite;transition:opacity .8s ease;">
     Шақыруды ашу үшін конвертті басыңыз
   </div>
 </div>
@@ -525,12 +517,12 @@
     </div>
 
     <!-- «Құрметті қонақтар!» -->
-    <div class="rv-words" style="font-family:'Wankstaberg Battles','Caveat',cursive;font-size:clamp(22px,6.5vw,36px);color:#5B2B26;line-height:1.1;font-weight:400;margin:0 0 clamp(18px,5vw,26px);text-align:center;width:100%;">
+    <div class="rv-words" style="font-family:'Marck Script','Caveat',cursive;font-size:clamp(22px,6.5vw,36px);color:#5B2B26;line-height:1.1;font-weight:400;margin:0 0 clamp(18px,5vw,26px);text-align:center;width:100%;">
       Құрметті қонақтар!
     </div>
 
     <!-- перечень гостей -->
-    <p class="rv-stag" style="font-family:'Marcellus',serif;font-size:clamp(13px,3.5vw,15.5px);line-height:2;letter-spacing:.04em;text-transform:uppercase;color:#5B2B26;margin:0 0 clamp(16px,4.5vw,24px);">
+    <p class="rv-stag" style="font-family:'PT Serif','Times New Roman',serif;font-size:clamp(13px,3.5vw,15.5px);line-height:2;letter-spacing:.04em;text-transform:uppercase;color:#5B2B26;margin:0 0 clamp(16px,4.5vw,24px);">
       Құрметті ағайын-туыс,<br>
       бауырлар, құда-жекжат,<br>
       нағашы-жиен, бөлелер,<br>
@@ -540,7 +532,7 @@
     </p>
 
     <!-- приглашение -->
-    <p class="rv-stag" style="font-family:'Marcellus',serif;font-size:clamp(13px,3.5vw,15.5px);line-height:2;letter-spacing:.04em;text-transform:uppercase;color:#5B2B26;margin:0;">
+    <p class="rv-stag" style="font-family:'PT Serif','Times New Roman',serif;font-size:clamp(13px,3.5vw,15.5px);line-height:2;letter-spacing:.04em;text-transform:uppercase;color:#5B2B26;margin:0;">
       Сіз(дер)ді қызымыз<br>
       Гульфайруздың ұзату<br>
       тойына арналған<br>
@@ -593,10 +585,10 @@
 
       <!-- текст поверх фото -->
       <div style="position:absolute;top:58%;left:clamp(22px,7vw,38px);right:clamp(22px,7vw,38px);transform:translateY(-50%);text-align:center;">
-        <div class="rv-words" style="font-family:'Wankstaberg Battles','Caveat',cursive;font-size:clamp(26px,8vw,44px);color:#fff;line-height:1.2;margin-bottom:clamp(14px,4vw,22px);">
+        <div class="rv-words" style="font-family:'Marck Script','Caveat',cursive;font-size:clamp(26px,8vw,44px);color:#fff;line-height:1.2;margin-bottom:clamp(14px,4vw,22px);">
           Той иелері:
         </div>
-        <div class="rv-stag" style="font-family:'Marcellus',serif;font-size:clamp(18px,5.5vw,30px);color:#fff;letter-spacing:.07em;text-transform:uppercase;line-height:1.25;">
+        <div class="rv-stag" style="font-family:'PT Serif','Times New Roman',serif;font-size:clamp(18px,5.5vw,30px);color:#fff;letter-spacing:.07em;text-transform:uppercase;line-height:1.25;">
           Жәнібек-Баршагүл
         </div>
       </div>
@@ -613,7 +605,7 @@
     <div class="edge-orn eo-left" style="top:24%"></div>
 
     <!-- заголовок каллиграфический -->
-    <div class="rv-words" style="font-family:'Wankstaberg Battles','Caveat',cursive;font-size:clamp(30px,9vw,48px);color:#5B2B26;line-height:1.15;font-weight:400;margin-bottom:clamp(20px,5.5vw,34px);">
+    <div class="rv-words" style="font-family:'Marck Script','Caveat',cursive;font-size:clamp(30px,9vw,48px);color:#5B2B26;line-height:1.15;font-weight:400;margin-bottom:clamp(20px,5.5vw,34px);">
       Той салтанаты:
     </div>
 
@@ -634,7 +626,7 @@
     <!-- время -->
     <div style="margin-top:clamp(18px,5vw,28px);text-align:center;">
       <div class="time-badge" style="display:inline-flex;gap:10px;align-items:center;border:1px solid rgba(184,134,59,.5);border-radius:999px;padding:9px 24px;font-family:'Jost',sans-serif;letter-spacing:.1em;font-size:clamp(11px,2.8vw,13px);text-transform:uppercase;color:#5B2B26;">
-        Басталуы &nbsp;<b style="font-family:'Marcellus',serif;font-size:clamp(16px,4.2vw,20px);letter-spacing:.02em;">16:00</b>
+        Басталуы &nbsp;<b style="font-family:'Cormorant Garamond',serif;font-size:clamp(16px,4.2vw,20px);letter-spacing:.02em;">18:00</b>
       </div>
     </div>
   </section>
@@ -694,17 +686,17 @@
     </div>
 
     <!-- «Мекен-жайы:» -->
-    <div class="rv-words" style="font-family:'Wankstaberg Battles','Caveat',cursive;font-size:clamp(30px,8.5vw,46px);color:#5B2B26;line-height:1.15;font-weight:400;margin:0 0 clamp(22px,6vw,34px);text-align:center;">
+    <div class="rv-words" style="font-family:'Marck Script','Caveat',cursive;font-size:clamp(30px,8.5vw,46px);color:#5B2B26;line-height:1.15;font-weight:400;margin:0 0 clamp(22px,6vw,34px);text-align:center;">
       Мекен-жайы:
     </div>
 
     <!-- АЛМАТЫ ҚАЛАСЫ -->
-    <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,5.4vw,26px);letter-spacing:.12em;text-transform:uppercase;color:#3B2A22;margin-bottom:clamp(20px,6vw,32px);font-weight:400;text-align:center;">
+    <div style="font-family:'PT Serif','Times New Roman',serif;font-size:clamp(18px,5.4vw,26px);letter-spacing:.12em;text-transform:uppercase;color:#3B2A22;margin-bottom:clamp(20px,6vw,32px);font-weight:400;text-align:center;">
       Алматы қаласы
     </div>
 
     <!-- адрес зала -->
-    <div style="font-family:'Marcellus',serif;font-size:clamp(13px,3.8vw,16px);letter-spacing:.07em;text-transform:uppercase;color:#5B2B26;line-height:1.75;text-align:center;">
+    <div style="font-family:'PT Serif','Times New Roman',serif;font-size:clamp(13px,3.8vw,16px);letter-spacing:.07em;text-transform:uppercase;color:#5B2B26;line-height:1.75;text-align:center;">
       Dostyk Palace, улица<br>
       Атагельды Исмаилова<br>
       29Б
@@ -787,26 +779,26 @@
     </div>
 
     <div style="position:relative;z-index:3;">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(13px,3.7vw,17px);letter-spacing:.34em;text-transform:uppercase;color:#E7D2A9;margin-bottom:clamp(22px,6vw,34px);">
+      <div style="font-family:'PT Serif','Times New Roman',serif;font-size:clamp(13px,3.7vw,17px);letter-spacing:.34em;text-transform:uppercase;color:#E7D2A9;margin-bottom:clamp(22px,6vw,34px);">
         Қалған уақыт:
       </div>
 
       <div style="display:flex;align-items:flex-start;justify-content:center;gap:clamp(12px,5.5vw,32px);color:#F4E9DD;">
         <div style="min-width:1.7ch;">
           <span id="cd-d" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,13vw,64px);line-height:1;display:block;">00</span>
-          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(10px,2.6vw,12px);letter-spacing:.2em;text-transform:uppercase;color:#CDB9A7;display:block;margin-top:clamp(6px,2vw,10px);">күн</span>
+          <span style="font-family:'PT Serif','Times New Roman',serif;font-size:clamp(10px,2.6vw,12px);letter-spacing:.2em;text-transform:uppercase;color:#CDB9A7;display:block;margin-top:clamp(6px,2vw,10px);">күн</span>
         </div>
         <div style="min-width:1.7ch;">
           <span id="cd-h" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,13vw,64px);line-height:1;display:block;">00</span>
-          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(10px,2.6vw,12px);letter-spacing:.2em;text-transform:uppercase;color:#CDB9A7;display:block;margin-top:clamp(6px,2vw,10px);">сағат</span>
+          <span style="font-family:'PT Serif','Times New Roman',serif;font-size:clamp(10px,2.6vw,12px);letter-spacing:.2em;text-transform:uppercase;color:#CDB9A7;display:block;margin-top:clamp(6px,2vw,10px);">сағат</span>
         </div>
         <div style="min-width:1.7ch;">
           <span id="cd-m" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,13vw,64px);line-height:1;display:block;">00</span>
-          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(10px,2.6vw,12px);letter-spacing:.2em;text-transform:uppercase;color:#CDB9A7;display:block;margin-top:clamp(6px,2vw,10px);">минут</span>
+          <span style="font-family:'PT Serif','Times New Roman',serif;font-size:clamp(10px,2.6vw,12px);letter-spacing:.2em;text-transform:uppercase;color:#CDB9A7;display:block;margin-top:clamp(6px,2vw,10px);">минут</span>
         </div>
         <div style="min-width:1.7ch;">
           <span id="cd-s" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,13vw,64px);line-height:1;display:block;">00</span>
-          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(10px,2.6vw,12px);letter-spacing:.2em;text-transform:uppercase;color:#CDB9A7;display:block;margin-top:clamp(6px,2vw,10px);">секунд</span>
+          <span style="font-family:'PT Serif','Times New Roman',serif;font-size:clamp(10px,2.6vw,12px);letter-spacing:.2em;text-transform:uppercase;color:#CDB9A7;display:block;margin-top:clamp(6px,2vw,10px);">секунд</span>
         </div>
       </div>
     </div>
@@ -822,11 +814,11 @@
 
     <div class="edge-orn eo-right" style="top:8%"></div>
 
-    <div class="rv-words" style="font-family:'Wankstaberg Battles','Caveat',cursive;font-size:clamp(28px,8.5vw,44px);color:#5B2B26;line-height:1.15;font-weight:400;margin-bottom:clamp(18px,5vw,26px);">
+    <div class="rv-words" style="font-family:'Marck Script','Caveat',cursive;font-size:clamp(28px,8.5vw,44px);color:#5B2B26;line-height:1.15;font-weight:400;margin-bottom:clamp(18px,5vw,26px);">
       Тойға келетіндігіңізді растаңыз
     </div>
 
-    <div style="font-family:'Marcellus',serif;font-size:clamp(12px,3.3vw,14px);letter-spacing:.03em;color:#7A6553;margin-bottom:clamp(16px,4.5vw,22px);">
+    <div style="font-family:'PT Serif','Times New Roman',serif;font-size:clamp(12px,3.3vw,14px);letter-spacing:.03em;color:#7A6553;margin-bottom:clamp(16px,4.5vw,22px);">
       Жауабыңызды таңдаңыз:
     </div>
 
@@ -836,14 +828,14 @@
       <button type="button" class="rsvp-opt" onclick="openRsvpModal('no')">Өкінішке орай, келе алмаймын</button>
     </div>
 
-    <div id="rsvp-thanks" style="display:none;text-align:center;font-family:'Marcellus',serif;color:#5B2B26;font-size:clamp(16px,4.2vw,19px);margin-top:8px;line-height:1.65;">
+    <div id="rsvp-thanks" style="display:none;text-align:center;font-family:'PT Serif','Times New Roman',serif;color:#5B2B26;font-size:clamp(16px,4.2vw,19px);margin-top:8px;line-height:1.65;">
       Рахмет! Жауабыңыз WhatsApp арқылы жіберілді.
     </div>
   </section>
 
   <!-- ── С10: Ізгі тілек ── -->
   <section data-reveal="wish" class="has-petals" style="
-    padding:clamp(52px,12vw,80px) clamp(24px,7vw,40px) clamp(56px,13vw,88px);
+    padding:clamp(34px,8vw,52px) clamp(24px,7vw,40px) clamp(36px,9vw,56px);
     background:linear-gradient(160deg,#4A282E,#351C21);color:#EFE3DA;
     text-align:center;
     opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
@@ -853,7 +845,7 @@
     <div class="edge-orn eo-left" style="top:16%"></div>
 
     <!-- орнамент-разделитель -->
-    <div style="margin:0 auto clamp(22px,6vw,32px);width:clamp(90px,26vw,130px);opacity:.75;">
+    <div style="margin:0 auto clamp(16px,4.5vw,24px);width:clamp(80px,22vw,112px);opacity:.75;">
       <svg class="divider-glow" viewBox="0 0 130 22" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M6,11 H50 M80,11 H124" stroke="#C9A87A" stroke-width="1"/>
         <path d="M65,3 L70,11 L65,19 L60,11 Z" fill="#C9A87A" opacity=".85"/>
@@ -863,20 +855,20 @@
       </svg>
     </div>
 
-    <div class="rv-words" style="font-family:'Wankstaberg Battles','Caveat',cursive;font-size:clamp(28px,8.5vw,44px);color:#F2E7DE;line-height:1.15;font-weight:400;margin-bottom:clamp(22px,6vw,32px);">
+    <div class="rv-words" style="font-family:'Marck Script','Caveat',cursive;font-size:clamp(24px,7vw,36px);color:#F2E7DE;line-height:1.15;font-weight:400;margin-bottom:clamp(14px,4vw,20px);">
       Ізгі тілек
     </div>
 
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(16px,4.7vw,21px);line-height:1.95;letter-spacing:.015em;color:#EEE1D7;max-width:440px;margin:0 auto;">
+    <!-- <p style="font-family:'PT Serif','Times New Roman',serif;font-style:italic;font-size:clamp(16px,4.7vw,21px);line-height:1.95;letter-spacing:.015em;color:#EEE1D7;max-width:440px;margin:0 auto;">
       Жаңа шаңырақтың оты ешқашан сөнбесін,<br>
       табалдырығынан береке мен бақыт аттамасын.<br>
       Бір-біріне деген құрмет пен мейірім<br>
       жылдар өткен сайын тереңдей берсін.<br>
       Күлкісі мол, қуанышы шексіз,<br>
       ұрпағы өнегелі, ғұмыры ұзақ болсын!
-    </p>
+    </p> -->
 
-    <div style="margin:clamp(24px,6.5vw,36px) auto 0;font-family:'Cormorant Garamond',serif;font-size:clamp(20px,6vw,28px);color:#D9BE86;"><span class="heart-beat">&#10084;</span></div>
+    <div style="margin:clamp(18px,5vw,26px) auto 0;font-family:'PT Serif','Times New Roman',serif;font-size:clamp(15px,4.4vw,20px);color:#D9BE86;"><span class="heart-beat">&#10084;</span></div>
   </section>
 
   <footer style="text-align:center;padding:28px 20px 52px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9B2A6;background:#351C21;">
@@ -897,7 +889,7 @@
       position:absolute;top:10px;right:12px;width:34px;height:34px;border:none;
       background:transparent;font-size:24px;color:#8A7060;cursor:pointer;line-height:1;">&times;</button>
 
-    <div id="rsvp-modal-title" style="font-family:'Wankstaberg Battles','Caveat',cursive;
+    <div id="rsvp-modal-title" style="font-family:'Marck Script','Caveat',cursive;
       font-size:clamp(23px,6.6vw,30px);color:#5B2B26;line-height:1.22;
       margin:4px 0 clamp(18px,5vw,24px);text-align:center;"></div>
 
@@ -905,19 +897,19 @@
       <div>
         <label style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7A6553;display:block;margin-bottom:5px;">Аты-жөніңіз *</label>
         <input type="text" name="fullname" placeholder="Айгерім Серікова" required autocomplete="name"
-               style="width:100%;padding:12px 13px;border:1px solid rgba(59,42,34,.18);border-radius:10px;font-family:'Cormorant Garamond',serif;font-size:16px;background:#F5EDE0;color:#3B2A22;">
+               style="width:100%;padding:12px 13px;border:1px solid rgba(59,42,34,.18);border-radius:10px;font-family:'PT Serif','Times New Roman',serif;font-size:16px;background:#F5EDE0;color:#3B2A22;">
       </div>
 
       <div id="rsvp-guests-wrap">
         <label style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7A6553;display:block;margin-bottom:5px;">Тойға қанша адам келесіз?</label>
         <input type="text" name="guests" placeholder="Мысалы: 2 адам"
-               style="width:100%;padding:12px 13px;border:1px solid rgba(59,42,34,.18);border-radius:10px;font-family:'Cormorant Garamond',serif;font-size:16px;background:#F5EDE0;color:#3B2A22;">
+               style="width:100%;padding:12px 13px;border:1px solid rgba(59,42,34,.18);border-radius:10px;font-family:'PT Serif','Times New Roman',serif;font-size:16px;background:#F5EDE0;color:#3B2A22;">
       </div>
 
       <div id="rsvp-reason-wrap" style="display:none;">
         <label style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7A6553;display:block;margin-bottom:5px;">Себебі (қаласаңыз)</label>
         <textarea name="reason" rows="3" placeholder="Келе алмау себебіңіз..."
-                  style="width:100%;padding:12px 13px;border:1px solid rgba(59,42,34,.18);border-radius:10px;font-family:'Cormorant Garamond',serif;font-size:16px;background:#F5EDE0;color:#3B2A22;resize:vertical;"></textarea>
+                  style="width:100%;padding:12px 13px;border:1px solid rgba(59,42,34,.18);border-radius:10px;font-family:'PT Serif','Times New Roman',serif;font-size:16px;background:#F5EDE0;color:#3B2A22;resize:vertical;"></textarea>
       </div>
 
       <button type="submit" style="width:100%;padding:15px;border:none;border-radius:999px;background:#25D366;color:#fff;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;box-shadow:0 14px 32px rgba(37,211,102,.28);display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;">
@@ -932,7 +924,7 @@
 
 <script>
   // ══ Конфигурация ══════════════════════════════════════════
-  const TARGET   = new Date('2026-10-10T16:00:00+05:00').getTime();
+  const TARGET   = new Date('2026-10-10T18:00:00+05:00').getTime();
   // ← Замените на реальный номер WhatsApp (с кодом страны, без + и пробелов)
   const WA_PHONE = '77475395395';
 
