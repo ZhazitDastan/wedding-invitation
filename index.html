@@ -486,23 +486,14 @@
 <main id="main" style="display:none;max-width:560px;margin:0 auto;position:relative;">
 
   <!-- ── С1: Заголовочное фото (img/title.jpg) ── -->
-  <section style="line-height:0;display:block;overflow:hidden;">
+  <section style="line-height:0;display:block;overflow:hidden;position:relative;">
     <img class="kenburns" src="img/title.jpg" alt="Гульфайруз — Қыз ұзату" style="width:100%;display:block;object-fit:cover;">
+    <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:14%;background:linear-gradient(to bottom, rgba(252,250,245,0) 0%, rgba(252,250,245,.55) 55%, #FCFAF5 100%);pointer-events:none;"></div>
   </section>
 
-  <!-- ── С2: Приветствие ── -->
-  <section data-reveal="greet" class="has-petals" style="
-    background:#EEE4D4;
-    padding:clamp(44px,11vw,68px) clamp(22px,7vw,38px) clamp(38px,9vw,56px);
-    text-align:center;
-    opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
-
-    <!-- парящие лепестки -->
-    <div class="petals" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    <div class="edge-orn eo-right" style="top:9%"></div>
-
-    <!-- Казахский медальон (орнамент) -->
-    <div style="margin:0 auto clamp(20px,5.5vw,30px);width:clamp(110px,32vw,158px);height:clamp(110px,32vw,158px);">
+  <!-- Казахский медальон (орнамент) — ровно на стыке первой и второй картинок -->
+  <div style="position:relative;height:0;">
+    <div style="position:absolute;top:0;left:50%;transform:translate(-50%,-50%);z-index:5;width:clamp(84px,24vw,120px);height:clamp(84px,24vw,120px);filter:drop-shadow(0 2px 6px rgba(60,30,20,.25));">
       <svg class="orn-spin" viewBox="0 0 200 200" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g transform="translate(100,100)">
           <!-- внешнее кольцо с точками -->
@@ -528,32 +519,27 @@
         </g>
       </svg>
     </div>
+  </div>
 
-    <!-- «Құрметті қонақтар!» -->
-    <div class="rv-words" style="font-family:'Marck Script','Caveat',cursive;font-size:clamp(22px,6.5vw,36px);color:#5B2B26;line-height:1.1;font-weight:400;margin:0 0 clamp(18px,5vw,26px);text-align:center;width:100%;">
-      Құрметті қонақтар!
+  <!-- ── С2: Приветствие ── -->
+  <section data-reveal="greet" class="has-petals" style="
+    text-align:center;
+    opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
+
+    <!-- парящие лепестки -->
+    <div class="petals" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="edge-orn eo-right" style="top:9%"></div>
+
+    <!-- «Құрметті қонақтар!» — картинка во весь экран, орнамент поверх неё -->
+    <div class="rv-stag" style="position:relative;width:100%;line-height:0;">
+      <img src="img/Guest.jpeg" alt="Құрметті қонақтар! Сіз(дер)ді қызымыз Гульфайруздың ұзату тойына арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз." style="display:block;width:100%;">
+
+      <!-- плавный переход от предыдущей картинки -->
+      <div aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:16%;background:linear-gradient(to bottom, #FCFAF5 0%, rgba(252,250,245,.5) 45%, rgba(252,250,245,0) 100%);pointer-events:none;"></div>
+
+      <!-- плавный переход к следующей картинке -->
+      <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:12%;background:linear-gradient(to bottom, rgba(238,233,222,0) 0%, rgba(238,233,222,1) 100%);pointer-events:none;"></div>
     </div>
-
-    <!-- перечень гостей -->
-    <p class="rv-stag" style="font-family:'PT Serif','Times New Roman',serif;font-size:clamp(13px,3.5vw,15.5px);line-height:2;letter-spacing:.04em;text-transform:uppercase;color:#5B2B26;margin:0 0 clamp(16px,4.5vw,24px);">
-      Құрметті ағайын-туыс,<br>
-      бауырлар, құда-жекжат,<br>
-      нағашы-жиен, бөлелер,<br>
-      құрбы-құрдас, әпке-<br>
-      жезделер, дос-жарандар,<br>
-      әріптестер, көршілер!
-    </p>
-
-    <!-- приглашение -->
-    <p class="rv-stag" style="font-family:'PT Serif','Times New Roman',serif;font-size:clamp(13px,3.5vw,15.5px);line-height:2;letter-spacing:.04em;text-transform:uppercase;color:#5B2B26;margin:0;">
-      Сіз(дер)ді қызымыз<br>
-      Гульфайруздың ұзату<br>
-      тойына арналған<br>
-      салтанатты ақ<br>
-      дастарханымыздың<br>
-      қадірлі қонағы болуға<br>
-      шақырамыз.
-    </p>
   </section>
 
   <!-- ── С3: Той иелері (фото платья + текст) ── -->
@@ -605,6 +591,9 @@
           Жәнібек-Баршагүл
         </div>
       </div>
+
+      <!-- плавный переход в фон следующей секции -->
+      <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:16%;background:linear-gradient(to bottom, rgba(238,228,212,0) 0%, #EEE4D4 100%);pointer-events:none;"></div>
     </div>
   </section>
 
@@ -653,6 +642,9 @@
     opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);">
   <!-- светлый оверлей чтобы текст читался -->
   <div style="position:absolute;inset:0;background:rgba(240,230,215,.82);pointer-events:none;"></div>
+  <!-- плавные переходы к соседним секциям (фон belt.jpg обрезается непредсказуемо) -->
+  <div aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:10%;background:linear-gradient(to bottom, rgba(238,228,212,1) 0%, rgba(238,228,212,0) 100%);pointer-events:none;"></div>
+  <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:10%;background:linear-gradient(to bottom, rgba(238,228,212,0) 0%, rgba(238,228,212,1) 100%);pointer-events:none;"></div>
   <!-- контент поверх оверлея -->
   <div style="position:relative;z-index:1;">
 
