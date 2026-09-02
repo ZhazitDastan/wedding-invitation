@@ -263,18 +263,45 @@
 <div id="app">
 
 <!-- ═══════════════════════════════════════════════
-     КОНВЕРТ (обложка)
+     КОНВЕРТ (обложка) — картинка img/Convert.jpeg
+     Старый рисованный SVG-конверт закомментирован ниже.
 ════════════════════════════════════════════════ -->
-<div id="cover" onclick="openEnvelope()" style="
+<div id="cover" onclick="openEnvelope()" role="button" tabindex="0" aria-label="Шақыру конверті — басу арқылы ашыңыз"
+  onkeydown="if(event.key==='Enter'||event.key===' ')openEnvelope()" style="
+  position:fixed; inset:0; z-index:50; overflow:hidden; cursor:pointer;
+  background:#F3EEE4;
+  perspective:1400px; -webkit-perspective:1400px;
+  transition:transform 1.3s cubic-bezier(.55,.03,.3,1), opacity .6s ease 1s;">
+
+  <!-- базовый слой картинки конверта -->
+  <div id="cover-img-base" aria-hidden="true" style="position:absolute;inset:0;
+    background:url('img/Convert.jpeg') center/cover no-repeat;"></div>
+
+  <!-- клапан конверта: тот же кадр, обрезанный по треугольнику клапана,
+       чтобы при открытии он «откидывался» назад как настоящий клапан -->
+  <div id="cover-flap" aria-hidden="true" style="position:absolute;inset:0;
+    background:url('img/Convert.jpeg') center/cover no-repeat;
+    clip-path:polygon(8% 33%, 92% 33%, 50% 56%);
+    -webkit-clip-path:polygon(8% 33%, 92% 33%, 50% 56%);
+    transform-origin:50% 33%;
+    transform-style:preserve-3d;
+    filter:drop-shadow(0 14px 22px rgba(60,30,20,.4));
+    transition:transform .85s cubic-bezier(.6,.05,.3,1), opacity .85s ease .1s;"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     Старая версия обложки (рисованный SVG-конверт).
+     Оставлена закомментированной на случай отката.
+════════════════════════════════════════════════
+
+<div id="cover-old" onclick="openEnvelope()" style="
   position:fixed; inset:0; z-index:50; overflow:hidden; cursor:pointer;
   display:flex; align-items:center; justify-content:center;
   background:radial-gradient(125% 95% at 50% 6%, #FBF3E6 0%, #EEDDC7 40%, #DCC1AC 74%, #C2A493 100%);
   transition:transform 1.3s cubic-bezier(.55,.03,.3,1), opacity .6s ease 1s;">
 
-  <!-- парящие лепестки -->
   <div class="petals" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
-  <!-- ботанические уголки фона -->
   <div aria-hidden="true" style="position:absolute;top:-4%;left:-6%;width:clamp(150px,42vw,300px);opacity:.22;pointer-events:none;">
     <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g stroke="#8A5A2B" stroke-width="1.4" stroke-linecap="round" fill="none">
@@ -302,7 +329,6 @@
     </svg>
   </div>
 
-  <!-- текст вверху -->
   <div style="position:absolute;z-index:3;top:clamp(26px,6.5vh,66px);left:0;right:0;text-align:center;padding:0 clamp(20px,7vw,44px);">
     <div style="font-family:'Jost',sans-serif;font-size:clamp(9px,2.6vw,12px);letter-spacing:.46em;text-transform:uppercase;color:#9A7C63;font-weight:400;margin-bottom:clamp(8px,2vh,14px);">
       Той шақыруы
@@ -320,7 +346,6 @@
     </div>
   </div>
 
-  <!-- ── Свадебный конверт ── -->
   <div class="envelope" style="position:relative;z-index:2;width:clamp(288px,88vw,410px);aspect-ratio:1.5/1;animation:gFloat 6s ease-in-out infinite;filter:drop-shadow(0 34px 60px rgba(90,55,40,.34));">
     <svg viewBox="0 0 320 214" width="100%" height="100%" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;">
       <defs>
@@ -347,18 +372,14 @@
         </g>
       </defs>
 
-      <!-- тело конверта -->
       <rect x="3" y="3" width="314" height="208" rx="14" fill="url(#envPaper)" stroke="url(#envGold)" stroke-width="1.7"/>
       <path d="M3 16 Q160 2 317 16 L317 100 Q160 112 3 100 Z" fill="#FFFFFF" fill-opacity=".14"/>
-      <!-- швы -->
       <path d="M7 9 L160 128 L313 9 M7 205 L160 128 L313 205" fill="none" stroke="#B39468" stroke-opacity=".3" stroke-width="1.2"/>
 
-      <!-- верхний клапан -->
       <path d="M3 5 L317 5 L160 146 Z" fill="url(#envFlap)" stroke="url(#envGold)" stroke-width="1.7" stroke-linejoin="round"/>
       <path d="M3 5 L317 5 L160 146 Z" fill="#8A5A2B" fill-opacity=".04"/>
       <path d="M22 14 L298 14 L160 138 Z" fill="none" stroke="#BE9040" stroke-opacity=".28" stroke-width="0.9"/>
 
-      <!-- лавровый венок на клапане -->
       <g transform="translate(160,72)" opacity=".7">
         <path d="M0 40 C-16 36 -26 22 -26 3 C-26 -7 -23 -15 -18 -21" fill="none" stroke="#BE9040" stroke-width="1.2"/>
         <path d="M0 40 C 16 36  26 22  26 3 C 26 -7  23 -15  18 -21" fill="none" stroke="#BE9040" stroke-width="1.2"/>
@@ -372,23 +393,19 @@
           <ellipse cx="26" cy="1"  rx="5.4" ry="2.3" transform="rotate(8 26 1)"/>
           <ellipse cx="22" cy="-11" rx="4.8" ry="2.1" transform="rotate(26 22 -11)"/>
         </g>
-        <!-- тюльпан в центре венка -->
         <path d="M-5 4 Q-8 -6 0 -12 Q8 -6 5 4 Q2 7 0 8 Q-2 7 -5 4Z" fill="#BE9040" fill-opacity=".72"/>
         <path d="M0 8 L0 22" stroke="#BE9040" stroke-width="1.1"/>
       </g>
 
-      <!-- золотая двойная рамка -->
       <rect x="15" y="16" width="290" height="182" rx="9" fill="none" stroke="#BE9040" stroke-opacity=".5" stroke-width="1.1"/>
       <rect x="19" y="20" width="282" height="174" rx="7" fill="none" stroke="#BE9040" stroke-opacity=".26" stroke-width="0.8" stroke-dasharray="1 3.5"/>
 
-      <!-- цветочные веточки в углах -->
       <use href="#envSprig" transform="translate(26,28)"/>
       <use href="#envSprig" transform="translate(294,28) scale(-1,1)"/>
       <use href="#envSprig" transform="translate(26,186) scale(1,-1)"/>
       <use href="#envSprig" transform="translate(294,186) scale(-1,-1)"/>
     </svg>
 
-    <!-- ── Восковая печать (кнопка) ── -->
     <div id="seal" role="button" tabindex="0" aria-label="Ашу"
          onkeydown="if(event.key==='Enter'||event.key===' ')openEnvelope()"
          style="position:absolute;top:63%;left:50%;
@@ -397,15 +414,12 @@
            display:flex;align-items:center;justify-content:center;cursor:pointer;
            transition:opacity 1s ease,filter 1s ease;">
 
-      <!-- ореол -->
       <div style="position:absolute;inset:-18%;border-radius:50%;border:1px solid rgba(190,144,64,.4);animation:gHalo 3.6s ease-in-out infinite;"></div>
       <div style="position:absolute;inset:-9%;border-radius:50%;border:1px solid rgba(190,144,64,.24);"></div>
 
-      <!-- капли воска -->
       <div style="position:absolute;bottom:-6%;left:31%;width:15%;height:24%;border-radius:46% 54% 50% 50%/34% 34% 66% 66%;background:radial-gradient(circle at 40% 28%,#8A322D,#4C171B);box-shadow:0 6px 10px rgba(90,40,30,.35);"></div>
       <div style="position:absolute;bottom:-3%;right:27%;width:10%;height:17%;border-radius:46% 54% 50% 50%/34% 34% 66% 66%;background:radial-gradient(circle at 40% 28%,#7C2A2A,#4C171B);box-shadow:0 5px 8px rgba(90,40,30,.3);"></div>
 
-      <!-- тело воска -->
       <div style="position:absolute;inset:0;border-radius:44% 56% 47% 53%/54% 44% 56% 46%;
         background:radial-gradient(circle at 33% 26%,#9A3A32 0%,#7C2528 44%,#521A1E 100%);
         box-shadow:0 16px 28px rgba(70,25,25,.4),inset 0 5px 14px rgba(255,214,194,.28),inset 0 -15px 26px rgba(40,10,12,.5);
@@ -413,7 +427,6 @@
       <div style="position:absolute;inset:0;border-radius:44% 56% 47% 53%/54% 44% 56% 46%;
         background:radial-gradient(ellipse 42% 32% at 30% 22%,rgba(255,238,226,.5),transparent 70%);"></div>
 
-      <!-- золотой лавровый ободок -->
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:9%;opacity:.8;">
         <g fill="none" stroke="#EBC88A" stroke-width="1.6">
           <circle cx="50" cy="50" r="40" stroke-opacity=".55"/>
@@ -428,7 +441,6 @@
         </g>
       </svg>
 
-      <!-- монограмма + подпись -->
       <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:clamp(1px,.7vw,4px);">
         <svg viewBox="0 0 44 44" fill="#EEC98B" xmlns="http://www.w3.org/2000/svg" style="width:clamp(21px,5.5vw,30px);height:auto;filter:drop-shadow(0 1px 0 rgba(50,15,15,.45));">
           <g transform="translate(22,22)">
@@ -447,11 +459,12 @@
     </div>
   </div>
 
-  <!-- подсказка снизу -->
   <div id="cover-hint" style="position:absolute;z-index:3;bottom:clamp(22px,6vh,52px);left:0;right:0;text-align:center;padding:0 24px;font-family:'PT Serif','Times New Roman',serif;font-size:clamp(11px,3vw,14px);letter-spacing:.06em;color:#8A6A54;animation:gFloat 3.4s ease-in-out infinite;transition:opacity .8s ease;">
     Шақыруды ашу үшін конвертті басыңыз
   </div>
 </div>
+
+════════════════════════════════════════════════ -->
 
 <!-- ═══════════════════════════════════════════════
      Кнопка звука
@@ -1000,41 +1013,53 @@
     }, 450);
   }
 
-  // ══ Открытие конверта (простой плавный переход) ══════════
+  // ══ Открытие конверта (клапан открывается, затем показывается контент) ══
   function openEnvelope() {
     if (phase !== 0) return;
     phase = 3;
     startAmbient();
 
-    // показываем контент под обложкой
-    const m  = mainEl();
-    const sb = document.getElementById('sound-btn');
-    m.style.display = 'block';
-    sb.style.display = 'flex';
-    if (!isDesktop()) document.body.style.overflow = '';
-    doScrollTop();
-    rev = { greet: true };
-    applyRev();
-    tick();
-    setInterval(tick, 1000);
-    setInterval(sweep, 400);
-    const target = scrollEl() || window;
-    target.addEventListener('scroll', sweep, { passive: true });
-    window.addEventListener('resize', sweep, { passive: true });
-    ['wheel','touchstart','keydown','mousedown'].forEach(ev =>
-      target.addEventListener(ev, stopScroll, { passive: true }));
-
-    // обложка плавно растворяется
     const cover = document.getElementById('cover');
     cover.style.pointerEvents = 'none';
-    cover.style.transition = 'opacity .7s ease, transform .7s ease';
-    requestAnimationFrame(() => {
-      cover.style.opacity = '0';
-      cover.style.transform = 'translateY(-16px) scale(1.03)';
-    });
-    setTimeout(() => { cover.style.display = 'none'; }, 750);
 
-    setTimeout(startScroll, 1100);
+    // клапан конверта откидывается назад
+    const flap = document.getElementById('cover-flap');
+    if (flap) {
+      requestAnimationFrame(() => {
+        flap.style.transform = 'rotateX(-165deg) translateY(-2%)';
+        flap.style.opacity = '0.25';
+      });
+    }
+
+    setTimeout(() => {
+      // показываем контент под обложкой
+      const m  = mainEl();
+      const sb = document.getElementById('sound-btn');
+      m.style.display = 'block';
+      sb.style.display = 'flex';
+      if (!isDesktop()) document.body.style.overflow = '';
+      doScrollTop();
+      rev = { greet: true };
+      applyRev();
+      tick();
+      setInterval(tick, 1000);
+      setInterval(sweep, 400);
+      const target = scrollEl() || window;
+      target.addEventListener('scroll', sweep, { passive: true });
+      window.addEventListener('resize', sweep, { passive: true });
+      ['wheel','touchstart','keydown','mousedown'].forEach(ev =>
+        target.addEventListener(ev, stopScroll, { passive: true }));
+
+      // обложка плавно растворяется
+      cover.style.transition = 'opacity .7s ease, transform .7s ease';
+      requestAnimationFrame(() => {
+        cover.style.opacity = '0';
+        cover.style.transform = 'translateY(-16px) scale(1.03)';
+      });
+      setTimeout(() => { cover.style.display = 'none'; }, 750);
+
+      setTimeout(startScroll, 1100);
+    }, 650);
   }
 
   // ══ Scroll reveal ════════════════════════════════════════
